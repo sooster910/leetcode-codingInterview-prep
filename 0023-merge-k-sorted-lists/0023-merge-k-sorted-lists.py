@@ -10,18 +10,18 @@ class Solution:
         if not lists:
             return None
 
-        while len(lists) > 1:
-            merged_lists = []
+        # 모든 연결 리스트를 deque에 넣기
+        dequeue = deque(lists)
 
-            for i in range(0, len(lists), 2):
-                l1 = lists[i]
-                l2 = lists[i + 1] if i + 1 < len(lists) else None
-                merged = self.twoMergeList(l1, l2)
-                merged_lists.append(merged)
+        while len(dequeue) > 1:
+            l1 = dequeue.popleft()
+            l2 = dequeue.popleft()
+            merged = self.twoMergeList(l1, l2)
+            dequeue.append(merged)
 
-            lists = merged_lists
+        return dequeue[0]
 
-        return lists[0]
+        
 
     def twoMergeList(self, l1, l2):
         result = ListNode()
