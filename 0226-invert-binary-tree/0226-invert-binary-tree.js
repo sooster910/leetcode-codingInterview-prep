@@ -13,8 +13,8 @@
 var invertTree = function(root) {
     
     invertOrder(root)
-    console.log("root",root)
     return root
+
     function invertOrder(root){
        if(!root) return
     
