@@ -29,3 +29,39 @@
 	<li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
 	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 </ul>
+
+### Solution with JS
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+    
+    invertOrder(root)
+    return root
+
+    function invertOrder(root){
+       if(!root) return
+    
+        invertOrder(root.left)
+        invertOrder(root.right)
+        swap(root)  // if(root.right||root.left) 조건 추가 해주면 함수를 호출 연산 절약._
+        
+    }
+        function swap(root){
+            let temp = root.left
+            root.left = root.right
+            root.right = temp
+        }
+};
+
+```
