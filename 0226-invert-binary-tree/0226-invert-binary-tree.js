@@ -13,6 +13,7 @@
 var invertTree = function(root) {
     
     invertOrder(root)
+    console.log("root",root)
     return root
     function invertOrder(root){
        if(!root) return
@@ -23,7 +24,7 @@ var invertTree = function(root) {
         // root.right = left;
         // root.left = right;
         swap(root)
-        return root;
+        // return root;
     }
         function swap(root){
         let temp = root.left
