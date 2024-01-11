@@ -20,8 +20,8 @@ var invertTree = function(root) {
     
         invertOrder(root.left)
         invertOrder(root.right)
-        if(root.left || root.right) swap(root)
-        return root
+        swap(root)
+        
     }
         function swap(root){
             let temp = root.left
