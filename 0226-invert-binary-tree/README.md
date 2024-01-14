@@ -29,14 +29,19 @@
 	<li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
 	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 </ul>
+
 ### Solution with Python
+
 ```python
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
 class Solution(object):
     def invertTree(self, root):
         """
