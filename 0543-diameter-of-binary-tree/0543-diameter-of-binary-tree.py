@@ -7,8 +7,7 @@
 class Solution:
     def __init__(self):
         self.maxDiameter = 0
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        cnt=0      
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:  
         leftDepth=0
         rightDepth=0
         self.dfs(root)
