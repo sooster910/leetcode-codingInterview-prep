@@ -29,3 +29,40 @@
 	<li>The number of nodes in the tree is in the range <code>[0, 5000]</code>.</li>
 	<li><code>-10<sup>4</sup> &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
 </ul>
+
+
+
+### solution 1
+return False 를 처리하는 부분이 깔끔하지 못함..
+```python
+class Solution:
+    answer = True
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        if root is None:
+            return self.answer
+        self.dfs(root)
+        if(self.answer ==False):
+            return False
+        return True
+      
+
+    def dfs(self, node):
+        if node is None:
+            return 0
+
+        left = self.dfs(node.left) + 1
+       
+        # print(node.val,left)
+        right = self.dfs(node.right) + 1
+        print(node.val, left, right)
+        if left == False or right ==False:
+            self.answer = False
+            return False
+    
+        if abs(left - right) > 1:
+            self.answer=False
+            return False
+       
+        return max(left, right)
+
+```
