@@ -1,4 +1,6 @@
+cnt = 0
 def solution(n):
+    global cnt
     cnt = 0
     isVisited_col = [-1 for _ in range(n)]  # i번째 행의 퀸이 위치한 열
 
@@ -11,7 +13,7 @@ def solution(n):
         return True
 
     def recursiveNQueen(level):
-        nonlocal cnt
+        global cnt
         if level == n:
             cnt += 1  # 유효한 배치를 찾음
             return
