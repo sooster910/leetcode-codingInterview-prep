@@ -1,0 +1,7 @@
+
+lpython:S1172")Remove the unused function parameter "K".(δί¥ΩώÿÿÿÿJ$49bc5c21-f33c-40b8-95a9-0ba7f36a686f
+python:S117"MRename this parameter "K" to match the regular expression ^[_a-z][a-z0-9_]*$.(δί¥ΩώÿÿÿÿJ$fec3fa19-03d5-4260-b441-bc206953417b
+python:S117"MRename this parameter "N" to match the regular expression ^[_a-z][a-z0-9_]*$.(δί¥ΩώÿÿÿÿJ$a288f666-b540-4950-9f6d-df5045746089
+[python:S3626"Remove this redundant return.(ΩγήJ$2b53ac95-fc71-4566-84e1-0a77fea1e87f
+•python:S1170"XRename this local variable "isFound" to match the regular expression ^[_a-z][a-z0-9_]*$.(‚χΡJ$3b463c66-dfc8-4c0d-a6bb-d9558d190ffe
+’python:S3776"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(§ΤΫοJ$ffa74bb5-d97e-4150-a275-f1e2d56281c3
