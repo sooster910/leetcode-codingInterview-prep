@@ -1,5 +1,5 @@
 
-žpython:S5886"[Return a value of type "int" instead of "float" or update function "closestCost" type hint.(Í ¯ÄüÿÿÿÿJ$b0a26b69-23ad-4756-9d55-a62a53383035
-’python:S117"URename this parameter "baseCosts" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø –µJ$5c45100a-3b42-4883-81f4-16b4de193e1a
-•python:S117"XRename this parameter "toppingCosts" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø –µJ$6d3bc32a-937a-4755-9d83-aaa5b4ccb35f
-Œpython:S100"ORename method "closestCost" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ø –µJ$b47f4dbb-7a1c-4030-8f6c-760c16ccd3d7
+žpython:S5886"[Return a value of type "int" instead of "float" or update function "closestCost" type hint.(Í ¯ÄüÿÿÿÿJ$f4a2f15e-8ed1-435a-929f-3f45e5f5f429
+’python:S117"URename this parameter "baseCosts" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø –µJ$59c11bdf-d574-4f6d-ad1e-e5bc9a06b56c
+•python:S117"XRename this parameter "toppingCosts" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø –µJ$f7be9bbb-7993-404c-9a12-6134a059aeba
+Œpython:S100"ORename method "closestCost" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ø –µJ$ac09688c-f765-41aa-8064-954c1af7c121

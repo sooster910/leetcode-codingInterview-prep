@@ -21,7 +21,7 @@ X
 (0752-open-the-lock/0752-open-the-lock.js,a/7/a70a151a8718135a45f53db139d3389f036c532e
 X
 (0752-open-the-lock/0752-open-the-lock.py,b/6/b6a9bd79ca630ec8bb2e049d67a2d7e43db273c6
-7
-test.py,a/3/a36e355ddb203d7d4133221f339dc406cb9f480f
 >
 combination.md,d/d/dd5d677343e7f55ba5954a0194467579cef811c8
+d
+4lib/DSA/combination/bj_2309_일곱난쟁이/index.py,4/f/4f1478d015de53c5fbff116b0d849b97979e73f3

@@ -33,21 +33,67 @@ N 날짜수 ,K 연속적인 날짜
 
 # 연속적 누적합 사용 
 
-a,b =  map(int,input().split())
-arr = list(map(int, input().split()))
+# a,b =  map(int,input().split())
+# arr = list(map(int, input().split()))
 
-prefix = [0 for _ in range(a+1)]
-answer = float("-inf")  # 이 부분 조심하기 ! 
-for i in range(a):
-	prefix[i+1] = prefix[i] + arr[i]
-
-
-#누적합을 구한후 구간 k부터 관찰한다. 
-for k in range(b, a+1):
-	temp_sum = prefix[k] - prefix[k-b]
-	if temp_sum > answer:
-		answer = temp_sum
+# prefix = [0 for _ in range(a+1)]
+# answer = float("-inf")  # 이 부분 조심하기 ! 
+# for i in range(a):
+# 	prefix[i+1] = prefix[i] + arr[i]
 
 
-print(answer)
+# #누적합을 구한후 구간 k부터 관찰한다. 
+# for k in range(b, a+1):
+# 	temp_sum = prefix[k] - prefix[k-b]
+# 	if temp_sum > answer:
+# 		answer = temp_sum
+
+
+# print(answer)
+
+
+"""
+첫째 줄에는 입력되는 온도의 수열에서 연속적인 K일의 온도의 합이 최대가 되는 값을 출력한다.\
+연속된  k일의 온도를 구했을 때, 이 합이 최대가 되는 값을 출력하면 됩니다. 
+
+K일 
+      3   -2   -4.   -9    0    3.   7.   13.   8.   -3
+K=2        1   -6    -13 
+
+누적합 O(N * K)
+sum O(N)
+for  i in range( k-1,   , i+2)
+	for j in range(  , j)
+
+
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
