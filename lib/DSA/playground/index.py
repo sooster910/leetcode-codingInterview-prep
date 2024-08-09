@@ -123,5 +123,61 @@ asvdge ef ofmdofn
 #     else:
 #         print("NE")
 
+sentence = str(input())
+
+answer =""
+isOpen=False
+reverse_q = ""
+for s in sentence :
+		
+	if s == " ": # 빈문자열이면 
+		print("빈문자열")
+		if isOpen: 
+			answer+=s
+	
+		else:
+			# 괄호내에있지 않다면 문자이다.끊어주고 answer에 합쳐준다. 
+			answer=answer + " " +reverse_q 
+			reverse_q = ""
+
+	elif 97<=ord(s) <=97+26-1:
+		if isOpen:
+			answer+=s
+
+		else: 
+			reverse_q = s+reverse_q
+
+	elif s =="<":
+		if isOpen:
+			print("왜 열려있어?")
+		else: 
+			isOpen= True
+
+			if len(reverse_q)>0 :
+				answer=answer + " " +reverse_q 
+				reverse_q = ""
+
+			answer+=s
+				
 
 
+	elif s ==">":
+		if isOpen:
+
+			answer+=s
+			isOpen=False
+
+		else: 
+			print("열리지도 않았는데 왜 닫힘?")
+
+	elif type(s) is int:
+		print("int",s)
+		if isOpen:
+			answer+=s
+
+		else: 
+			reverse_q = s+reverse_q
+
+	else:
+		answer+=s
+print(answer)
