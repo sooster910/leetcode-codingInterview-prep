@@ -47,7 +47,7 @@ num1, num2= map(int, input().split())
 def gcd(a,b):
 
     temp =a%b
-    if(temp == 0 ): #0 이면  작은수 리
+    if(temp == 0 ): #0 이면 작은수리
         return b
     a = b
     b = temp 
