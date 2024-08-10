@@ -13,7 +13,7 @@ import math
 
 n,m = map(int,input().split())
 
-result = (math.factorial(n)/math.factorial(n-m+1))/math.factorial(m)
+result = math.factorial(n)/(math.factorial(n-m)*math.factorial(m))
 
 # result = math.comb()
 print(result)
