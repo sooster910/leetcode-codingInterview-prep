@@ -7,7 +7,7 @@ def solution(n):
     def isValidToPutQueen(level, col):
         for prev_level in range(level):
             # 같은 열이나 대각선에 다른 퀸이 있는지 확인
-            if isVisited_col[prev_level] == col or \
+            if isVisited_col[prev_level] == col or 
                level - prev_level == abs(col - isVisited_col[prev_level]):
                 return False
         return True
