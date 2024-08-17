@@ -1,6 +1,6 @@
 """
 정수를 저장하는 큐 구현 후 
-
+시간복잡도:O(n)
 """
 
 from collections import deque

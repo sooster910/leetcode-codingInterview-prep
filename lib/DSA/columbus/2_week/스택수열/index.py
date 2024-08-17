@@ -17,6 +17,7 @@ n개의 줄 1이상 n이하
 4 
 1 2 3 4 5 6 7 8 
 
+시간복잡도 : O(n)
 """
 
 
@@ -25,10 +26,20 @@ import sys
 n =int(sys.stdin.readline())
 
 def push(arr, num ):
+	 """
+    스택에 숫자를 추가하는 함수 (사용되지 않음)
+    :param arr: 스택
+    :param num: 추가할 숫자
+    """
+
 	arr.append(num)
 	print("+")
 
 def pop(arr):
+	"""
+    스택에서 숫자를 제거하는 함수 (사용되지 않음)
+    :param arr: 스택
+    """
 	if len(arr) <=0: 
 		return
 	arr.pop()
@@ -41,18 +52,20 @@ possible = True
 for _ in range(n):
 	num=int(sys.stdin.readline())
 
-
+	# tracker가 현재 숫자보다 작거나 같은 동안 스택에 숫자 추가
 	while tracker <= num : 
 		stack.append(tracker)
 		result.append("+")
 		tracker+=1
 
+	# 스택의 top이 현재 숫자와 같으면 pop
 	if stack and stack[-1] == num :
 		stack.pop()
 		result.append("-")
 	else:
+		# 스택의 top이 현재 숫자와 다르면 수열 생성 불가능
 		print("NO")  
-		sys.exit(0)
+		sys.exit(0) # 프로그램 즉시 종료 , 이 부분 처리를 못해 틀렸었음 
 
 for r in result:
 	print(r)
