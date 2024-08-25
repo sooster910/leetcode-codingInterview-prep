@@ -12,26 +12,26 @@ N개의 줄에 포켓몬의 번호가 1번인 포켓몬 부터 N번에 해당하
 문제가 알파벳이면 -> 번호를 말해야 하고, 
 숫자이면 -> 포켓몬번호에 해당하는 문자를 출력 
 
-
+시간 복잡도 : O(n)
 """
 
 n,m=map(int,input().split())
 
 
-pocketmon = ["a"]*(n+1)
+pocketmon = ["a"]*(n+1) #임의의 default문자로 pocketmon 빈배열 만들기
 mapper = {}
-for i in range(1,n+1):
+for i in range(1,n+1): #주어진 포켓몬의 번호만큼 순회하면서
 	name = str(input())
-	mapper[name] = i
-	pocketmon[i] = name
+	mapper[name] = i  # 포켓몬의 번호를 넣기위해 해당하는 이름에 매핑
+	pocketmon[i] = name #포켓몬 이름을 넣기 위해 해당하는 넘버에 매핑
 
 for i in range(m):
 	q=input()
-	if q.isdigit():
-		idx = int(q)
-		print(pocketmon[idx])
+	if q.isdigit(): #숫자면
+		idx = int(q) 
+		print(pocketmon[idx]) #포켓몬 도감에서 찾기 
 	else :
-		print(mapper[q])
+		print(mapper[q]) #문자면 mapper에서 찾기 
 
 
 
