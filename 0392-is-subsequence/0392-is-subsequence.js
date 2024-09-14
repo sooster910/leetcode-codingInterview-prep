@@ -5,18 +5,18 @@
  */
 var isSubsequence = function(s, t) {
     //if s is subsequence of t  -> true. false
-    let answer = 0
-    for (const char of s){
-    let start = 0    
-        for(let i = start; i<= t.length-1; i++){
-            if( t[i] === char ){
-                start = i+1
+    let answer = 0;
+    let start = 0;
+    if( s.length> t.length) return false
+    for( const char of s ){
+        for(let i = start; i<=t.length-1; i++){
+            if(char === t[i]){
                 answer+=1
+                start= i+1
                 break
             }
         }
-         
     }
-
     return answer === s.length
 };
+
