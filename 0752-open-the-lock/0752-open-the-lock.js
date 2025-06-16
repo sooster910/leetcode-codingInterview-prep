@@ -9,10 +9,10 @@ var openLock = function(deadends, target) {
     q.push(["0000", 0])
     const visited = new Set("0000")
     let answer = -1
-
+    const deadendsSet = new Set([...deadends])
     while(q.length){
         const [currentLock, changeNum ]= q.shift()
-        if(deadends.some((deadend)=> deadend === currentLock)){
+        if(deadendsSet.has(currentLock)){
             continue
         }
         if(currentLock === target){
