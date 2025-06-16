@@ -1,43 +1,51 @@
+/**
+ * @param {string[]} deadends
+ * @param {string} target
+ * @return {number}
+ */
 var openLock = function(deadends, target) {
-    const deadendsSet = new set(deadends)
-    const visited = new set()
-    const queue =[]
+    // bfs를 이용해서 갈 수 있는 모든 경우의 수 찾기 
+    const q = []
+    q.push(["0000", 0])
+    const visited = new Set("0000")
+    let answer = -1
 
-    // 초기설정
-    let start = "0000"
-
-    if (deadendsSet.has(start) || deadendsSet.has(target)){
-        return -1
-    }
-    queue.push([start, 0])
-    visited.add(start)
-
-    while (queue.length){
-        const [cur, turns] = queue.shift();
-        if (cur === target){
-            return turns
+    while(q.length){
+        const [currentLock, changeNum ]= q.shift()
+        if(deadends.some((deadend)=> deadend === currentLock)){
+            continue
         }
+        if(currentLock === target){
+            answer = changeNum
+            break
+        }
+        //possible near next lock
+        //한칸 올리거나 , 한칸 내리거나 
+       
         for(let i =0; i<4; i++){
-            const curr_state = cur.split('')
-            curr_state[i] = (parseInt(curr_state[i]) + 1) % 10
-            const next_state = curr_state.join('')
-            if (!visited.has(next_state) && !deadendsSet.has(next_state)){
-                queue.push([next_state, turns + 1])
-                visited.add(next_state)
-            }
-            curr_state[i] = (parseInt(curr_state[i]) + 8) % 10
-            const prev_state = curr_state.join('')
-            if (!visited.has(prev_state) && !deadendsSet.has(prev_state)){
-                queue.push([prev_state, turns + 1])
-                visited.add(prev_state)
-            }
-
+            //4번을 돌면서 해당 인덱스의 값을 +1, -1한 값
+            let nextLock = ""
+            
+            for(const operator of ["+", "-"]){
+                let newNum= ""
+                if( operator === "+"){
+                    newNum = (((Number(currentLock[i])+1)%10) + 10) % 10;
+                    // i 번째만 변경하게 하기 
+                }else if(operator === "-"){
+                     newNum=(((Number(currentLock[i])-1)%10) + 10) % 10;
+                }
+                const currentLockArr = currentLock.split("")
+                    currentLockArr[i]= newNum.toString()
+                    nextLock = currentLockArr.join("")
+                    
+                
+                if(!visited.has(nextLock)){
+                    q.push([nextLock, changeNum+1])
+                    visited.add(nextLock)
+                }
+            } 
         }
-        curr_state, turns = queue.popleft()
-
     }
 
+    return answer
 };
-
-
-openLock(["0201","0101","0102","1212","2002"], "0202")//6
