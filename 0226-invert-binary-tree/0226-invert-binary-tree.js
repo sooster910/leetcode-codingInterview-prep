@@ -12,20 +12,17 @@
  */
 var invertTree = function(root) {
     
-    invertOrder(root)
-    return root
-
-    function invertOrder(root){
-       if(!root) return
+    return invertOrder(root)
     
-        invertOrder(root.left)
-        invertOrder(root.right)
-        swap(root)
-        
+    function invertOrder(root){
+        if(!root) return null
+    
+        let left=invertOrder(root.left)
+        let right=invertOrder(root.right)
+    
+        root.right = left;
+        root.left = right;
+    
+        return root;
     }
-        function swap(root){
-            let temp = root.left
-            root.left = root.right
-            root.right = temp
-        }
 };
