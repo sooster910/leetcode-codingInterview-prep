@@ -24,6 +24,7 @@ var orangesRotting = function(grid) {
             if( grid[i][j]===2) q.push([i,j,0])
         }
     }
+    console.log("finalRottonTomato",finalRottonTomato,freshTomatoNum)
     
     if(!freshTomatoNum) return 0
 
@@ -50,6 +51,7 @@ var orangesRotting = function(grid) {
         }
         
     }
+    console.log("last",finalRottonTomato,freshTomatoNum)
     return finalRottonTomato === freshTomatoNum? minutes : -1
     
 };
